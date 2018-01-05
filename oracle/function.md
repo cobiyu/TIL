@@ -7,7 +7,7 @@
     CREATE OR REPLACE Function TotalIncome
        ( name_in IN varchar2 )  -- 변수선언
        RETURN varchar2
-    IS
+       IS
        total_val number(6);
 
        cursor c1 is -- c1 커서변수 (loop용 변수)
@@ -33,7 +33,7 @@
     - SYS_REFCURSOR는 쿼리 실행 결과를 저장하기 위한 자료형이다.
 
     ```sql
-    CREATE OR REPLACE PROCEDURE listAllScore (
+    CREATE OR REPLACE Function listAllScore (
         pResult OUT SYS_REFCURSOR
     )
     IS
@@ -47,7 +47,7 @@
     /
 
     -- 위에서 만든 프로시저를 확인하기 위한 프로시저
-    CREATE or replace procedure s4
+    CREATE OR REPLACE Function  s4
     IS
           result SYS_REFCURSOR; --  쿼리실행결과 저장 위한 변수
           vHak VARCHAR2(20);
